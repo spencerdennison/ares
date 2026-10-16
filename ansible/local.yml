@@ -1,0 +1,7 @@
+- name: setup workstation
+  hosts: localhost
+  connection: local
+  become: true
+
+  roles:
+    - network

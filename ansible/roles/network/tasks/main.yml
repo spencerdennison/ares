@@ -1,0 +1,15 @@
+- name: set static eth
+  ansible.builtin.template:
+    src: ethernet.j2
+    dest: /etc/systemd/network/20-ethernet.network
+    owner: root
+    group: root
+    mode: '0644'
+
+- name: set static wlan
+    src: wlan.j2
+    dest: /etc/systemd/network/20-wlan.network
+    owner: root
+    group: root
+    mode: '0644'
+  notify: restart systemd-networkd

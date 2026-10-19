@@ -5,6 +5,7 @@
     owner: root
     group: root
     mode: '0644'
+  notify: restart systemd-networkd
 
 - name: set static wlan
   ansible.builtin.template:

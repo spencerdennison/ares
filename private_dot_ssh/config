@@ -6,7 +6,7 @@ Host github.com
     User            spencerdennison
     IdentityFile    ~/.ssh/git
 
-Host services
-    HostName        spencerdennison.com
+Host zeus
+    HostName        zeus.spencerdennison.com
     User            administrator
-    IdentityFile    ~/.ssh/services
+    IdentityFile    ~/.ssh/zeus

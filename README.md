@@ -1,7 +1,3 @@
-# dotfiles
+# ares
 
-Configuration for my favorite Arch Linux setup.
-
-## Tree
-
-In progress
+Configuration for my workstation.

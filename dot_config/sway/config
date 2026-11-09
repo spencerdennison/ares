@@ -14,7 +14,7 @@ set $launcher tofi-run | xargs swaymsg exec --
 set $screenshot grim -g "$(slurp)" - | swappy -f -
 
 # output configuration
-output DP-1 resolution 1920x1080 position 1920 0
+output DP-1 resolution 1920x1080 position 1920 0 bg ~/wallpapers/frank-frazetta-ocean.jpg fill
 
 # input configuration
 input type:pointer {

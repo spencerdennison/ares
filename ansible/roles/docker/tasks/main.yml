@@ -1,0 +1,22 @@
+- name: install
+  community.general.pacman:
+    name:
+      - docker
+    state: present
+    update_cache: true
+
+- name: start
+  ansible.builtin.service:
+    name: docker
+    state: started
+    enabled: true
+
+- name: setup network
+  community.docker.docker_network:
+    name: '{{ network }}'
+
+- name: add user to group
+  user:
+    name: admin
+    groups: docker
+    append: true

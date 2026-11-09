@@ -1,0 +1,12 @@
+- name: start container
+  community.docker.docker_container:
+    name: boinc
+    image: boinc/client
+    ports:
+      - '31416:31416'
+    volumes:
+      - '/srv/docker/boinc:/var/lib/boinc'
+    networks:
+      - name: '{{ network }}'
+    restart_policy: 'unless-stopped'
+    state: started

@@ -1,6 +1,7 @@
 syntax on
 filetype plugin indent on
 colorscheme industry
+highlight Normal guibg=NONE ctermbg=NONE
 
 set nocompatible
 set expandtab

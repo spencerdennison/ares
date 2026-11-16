@@ -9,4 +9,3 @@
     - docker
     - node-exporter
     - cadvisor
-    - boinc

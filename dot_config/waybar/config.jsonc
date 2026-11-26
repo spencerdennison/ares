@@ -51,11 +51,11 @@
             "on-discharging": "notify-send -u normal 'Power Switch' Discharging",
             "on-charging": "notify-send -u normal 'Power Switch' Charging"
         },
-        "format": "{capacity}%",
+        "format": "BAT {capacity}%",
         "max-length": 25
     },
     "network": {
-        "format-wifi": "WIFI ({signalStrength}%)",
+        "format-wifi": "WIFI {signalStrength}%",
         "format-ethernet": "ETH"
     },
     "pulseaudio": {

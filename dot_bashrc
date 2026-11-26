@@ -8,6 +8,9 @@ export VISUAL=vim
 # remove all but last identical command
 export HISTCONTROL=erasedups
 
+# add esp-idf
+source /opt/esp-idf/export.sh
+
 # extend bash history size
 HISTSIZE=1000
 HISTFILESIZE=1000

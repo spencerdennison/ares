@@ -18,3 +18,5 @@
       when: ansible_facts["hostname"] == 'ares'
     - role: gaming
       when: ansible_facts["hostname"] == 'ares'
+    - role: tailscale
+      when: ansible_facts["hostname"] == 'hermes'

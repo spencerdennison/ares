@@ -1,4 +1,4 @@
-- name: setup workstation
+- name: setup olympus
   hosts: localhost
   connection: local
   become: true
@@ -6,6 +6,15 @@
     - vars/all.yml
 
   roles:
-    - docker
-    - node-exporter
-    - cadvisor
+    - network
+    - aur
+    - packages
+    - dotfiles
+    - role: docker
+      when: ansible_facts["hostname"] == 'ares'
+    - role: cadvisor
+      when: ansible_facts["hostname"] == 'ares'
+    - role: node-exporter
+      when: ansible_facts["hostname"] == 'ares'
+    - role: gaming
+      when: ansible_facts["hostname"] == 'ares'

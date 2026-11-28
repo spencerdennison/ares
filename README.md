@@ -49,7 +49,7 @@ Run Ansible playbooks
 Generate SSH keys
 
 ```bash
-ssh-keygen -t ed25519 -f ~/.ssh/keyname
+ssh-keygen -t ed25519 -f ~/.ssh/key
 ```
 
 Add hermes to Tailscale network

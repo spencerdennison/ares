@@ -3,4 +3,4 @@ node_modules/
 package*
 ansible/
 LICENSE
-provision.sh
+scripts/

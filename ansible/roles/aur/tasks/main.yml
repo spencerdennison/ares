@@ -1,0 +1,34 @@
+- name: configure passwordless pacman
+  ansible.builtin.copy:
+    content: "admin ALL=(ALL) NOPASSWD: /usr/bin/pacman\n"
+    dest: /etc/sudoers.d/admin
+    mode: '0440'
+    owner: root
+    group: root
+    validate: visudo -cf %s
+
+- name: command check
+  become: false
+  ansible.builtin.shell: command -v paru
+  register: paru_cmd_check
+  changed_when: false
+
+- name: dir check
+  become: false
+  ansible.builtin.stat:
+    path: /home/admin/paru
+  register: paru_dir_check
+
+- name: chdir home
+  become: false
+  ansible.builtin.command: git clone https://aur.archlinux.org/paru.git
+  args:
+    chdir: /home/admin/
+  when: paru_cmd_check.rc == 1 and paru_dir_check.stat.exists == false
+
+- name: build
+  become: false
+  ansible.builtin.command: makepkg -si 
+  args:
+    chdir: /home/admin/paru/ 
+  when: paru_cmd_check.rc == 1

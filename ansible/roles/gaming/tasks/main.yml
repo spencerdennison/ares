@@ -1,0 +1,10 @@
+- name: install
+  community.general.pacman:
+    name:
+      - gamemode
+      - gamescope
+      - lib32-vulkan-radeon
+      - steam
+      - vulkan-radeon
+    state: present
+    update_cache: true
